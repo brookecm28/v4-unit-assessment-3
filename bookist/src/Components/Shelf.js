@@ -9,19 +9,20 @@ class Shelf extends Component {
   render () {
 
     const mappedTitles = this.props.shelf.map((element, index) => {
-        return (
-            <div>
-                <p>{this.props.shelf[index]}</p>
-            </div>
-        )
-
-    }
-
+      return (
+        <div>
+          <p>{this.props.shelf[index]}</p>
+        </div>
+      )
+     }
     )
 
     return (
-      <div>
+      <div className='shelf-container'>
         <h3>Your Shelf</h3>
+        <button
+        onClick={() => this.props.clearShelf()}
+        >clear shelf</button>
         {mappedTitles}
       </div>
     )

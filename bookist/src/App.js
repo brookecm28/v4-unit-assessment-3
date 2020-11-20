@@ -13,13 +13,19 @@ class App extends Component {
       shelf: []
     }
     this.addToShelf = this.addToShelf.bind(this)
+    this.clearShelf = this.clearShelf.bind(this)
   }
 
   addToShelf(addedBook) {
     this.setState ({
       shelf: [...this.state.shelf, addedBook]
     })
-    console.log(addedBook)
+  }
+
+  clearShelf() {
+    this.setState ({
+      shelf: []
+    })
   }
 
   render () {
@@ -27,9 +33,14 @@ class App extends Component {
     <div className="App">
       <Header />
       <div className="notHeader">
-        <BookList addToShelf={this.addToShelf} books={this.state.books}/>
-        {console.log(this.state.books)}
-        <Shelf shelf={this.state.shelf}/>
+        <BookList 
+          addToShelf={this.addToShelf} 
+          books={this.state.books}
+        />
+        <Shelf 
+          shelf={this.state.shelf}
+          clearShelf={this.clearShelf}
+        />
       </div>
     </div>
   )}
