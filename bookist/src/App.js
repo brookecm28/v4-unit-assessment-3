@@ -4,6 +4,7 @@ import Header from './Components/Header'
 import BookList from './Components/BookList'
 import Shelf from './Components/Shelf'
 import Data from './data'
+import SearchBar from './Components/SearchBar'
 
 class App extends Component {
   constructor() {
@@ -17,9 +18,12 @@ class App extends Component {
   }
 
   addToShelf(addedBook) {
+    if (this.state.shelf.includes(addedBook)) {
+      return this.state.shelf
+    } else {
     this.setState ({
       shelf: [...this.state.shelf, addedBook]
-    })
+    })}
   }
 
   clearShelf() {
@@ -32,6 +36,9 @@ class App extends Component {
   return (
     <div className="App">
       <Header />
+      <div className='bar-holder'>
+        <SearchBar />
+      </div>
       <div className="notHeader">
         <BookList 
           addToShelf={this.addToShelf} 

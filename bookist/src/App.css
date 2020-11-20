@@ -11,6 +11,19 @@
 
 .header {
   color: teal;
+  font-family: Courier, monospace;
+}
+
+.bar-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.search-container {
+  margin-bottom: 40px;
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .list-container {
