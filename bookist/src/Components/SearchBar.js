@@ -15,9 +15,11 @@ class SearchBar extends Component {
     console.log(this.state.userInput)
   }
 
-//   handleClick () {
-//     this.props.filterBooks(this.state.userInput)
-//   }
+  handleClear () {
+    this.setState ({
+      userInput: ''
+    })
+  }
 
   render () {
     return (
@@ -25,12 +27,15 @@ class SearchBar extends Component {
         <input 
           placeholder='Search'
           onChange={e => this.handleOnChange(e)}
+          value={this.state.userInput}
         />
         <button 
             onClick={() => this.props.filterBooks(this.state.userInput)}>search          
         </button>
-        <button>
-          clear search
+        <button
+            onClick={() => {
+                this.props.clearSearch(this.state.userInput)
+                this.handleClear()}}>clear search
         </button>
       </div>
     )

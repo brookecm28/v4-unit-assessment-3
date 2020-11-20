@@ -5,6 +5,7 @@ import BookList from './Components/BookList'
 import Shelf from './Components/Shelf'
 import Data from './data'
 import SearchBar from './Components/SearchBar'
+import data from './data';
 
 class App extends Component {
   constructor() {
@@ -16,6 +17,7 @@ class App extends Component {
     this.addToShelf = this.addToShelf.bind(this)
     this.clearShelf = this.clearShelf.bind(this)
     this.filterBooks = this.filterBooks.bind(this)
+    this.clearSearch = this.clearSearch.bind(this)
   }
 
   addToShelf(addedBook) {
@@ -46,6 +48,13 @@ class App extends Component {
     })
   }
 
+  clearSearch (userInput) {
+    this.setState ({
+      books: Data
+    })
+    userInput = ''
+  }
+
   render () {
   return (
     <div className="App">
@@ -53,6 +62,7 @@ class App extends Component {
       <div className='bar-holder'>
         <SearchBar
           filterBooks={this.filterBooks}
+          clearSearch={this.clearSearch}
         />
       </div>
       <div className="notHeader">
