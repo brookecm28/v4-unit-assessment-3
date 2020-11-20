@@ -17,10 +17,11 @@ class App extends Component {
   return (
     <div className="App">
       <Header />
-      <body className="notHeader">
+      <div className="notHeader">
         <BookList books={this.state.books}/>
+        {console.log(this.state.books)}
         <Shelf />
-      </body>
+      </div>
     </div>
   )}
 }

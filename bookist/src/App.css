@@ -13,3 +13,35 @@
   color: teal;
 }
 
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 800px;
+  justify-content: space-around;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.list-img {
+  width: 175px;
+}
+
+.list-title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  margin-top: 10px;
+}
+
+.list-author {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.book-container {
+  width: 175px;
+  margin: 0px 10px;
+}
