@@ -7,8 +7,23 @@ class Shelf extends Component {
   }
 
   render () {
+
+    const mappedTitles = this.props.shelf.map((element, index) => {
+        return (
+            <div>
+                <p>{this.props.shelf[index]}</p>
+            </div>
+        )
+
+    }
+
+    )
+
     return (
-        <div>Shelf</div>
+      <div>
+        <h3>Your Shelf</h3>
+        {mappedTitles}
+      </div>
     )
   }
 }

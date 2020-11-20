@@ -9,8 +9,17 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      books: Data
+      books: Data,
+      shelf: []
     }
+    this.addToShelf = this.addToShelf.bind(this)
+  }
+
+  addToShelf(addedBook) {
+    this.setState ({
+      shelf: [...this.state.shelf, addedBook]
+    })
+    console.log(addedBook)
   }
 
   render () {
@@ -18,9 +27,9 @@ class App extends Component {
     <div className="App">
       <Header />
       <div className="notHeader">
-        <BookList books={this.state.books}/>
+        <BookList addToShelf={this.addToShelf} books={this.state.books}/>
         {console.log(this.state.books)}
-        <Shelf />
+        <Shelf shelf={this.state.shelf}/>
       </div>
     </div>
   )}
