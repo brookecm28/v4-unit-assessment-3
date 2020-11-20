@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  /* display: flex;
+  justify-content: space-around; */
+}
+
+.notHeader {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header {
+  color: teal;
+}
+
