@@ -15,6 +15,7 @@ class App extends Component {
     }
     this.addToShelf = this.addToShelf.bind(this)
     this.clearShelf = this.clearShelf.bind(this)
+    this.filterBooks = this.filterBooks.bind(this)
   }
 
   addToShelf(addedBook) {
@@ -32,12 +33,27 @@ class App extends Component {
     })
   }
 
+  filterBooks(input) {
+    input = input.toLowerCase()
+    const filteredBooks = this.state.books.filter((element, index) => {
+      if (element.title.toLowerCase().includes(input) || element.author.toLowerCase().includes(input))
+      return element
+    })
+    console.log(input)
+    console.log(filteredBooks)
+    this.setState ({
+      books: filteredBooks
+    })
+  }
+
   render () {
   return (
     <div className="App">
       <Header />
       <div className='bar-holder'>
-        <SearchBar />
+        <SearchBar
+          filterBooks={this.filterBooks}
+        />
       </div>
       <div className="notHeader">
         <BookList 
